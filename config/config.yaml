@@ -1,0 +1,21 @@
+COMMON: &common #标识
+  # app设置
+  DEBUG: False
+  SECRET_KEY: insecure
+
+DEVELOPMENT: &development
+  <<: *common # 继承common，没有重新定义的变量，使用common变量值
+  DEBUG: True
+  ENV: dev
+
+TESTING: &setting
+  <<: *common
+  ENV: test
+
+STAGING: &staging
+  <<: *common
+  SECRET_KEY: sortasecure
+
+PRODUCTION: &production
+  <<: *common
+  SECRET_KEY: mdd1##$$%^!DSA#FDSF
